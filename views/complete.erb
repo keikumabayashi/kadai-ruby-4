@@ -44,32 +44,34 @@
         <% mail = params['mail'] %>
         <% tel = params['tel'] %>
         <% content = params['content'] %>
-            <table class="table table-striped">
-                <thead><h3>送信内容</h3></thead>
-                <tr>
-                    <th class = "text-center">会社名</th>
-                    <td><%=company%></td>
-                </tr>
-                <tr>
-                    <th class = "text-center">氏名</th>
-                    <td><%= name%></td>
-                </tr>
-                <tr>
-                    <th class = "text-center">メール</th>
-                    <td><%= mail%></td>
-                </tr>
-                <tr>
-                    <th class = "text-center">電話番号</th>
-                    <td><%= tel%></td>
-                </tr>
-                <tr>
-                    <th class = "text-center">内容</th>
-                    <td><%= content%></td>
-                </tr>
-            </table>
+            <div class="row">
+                <table class="table table-striped">
+                    <thead><h3>送信内容</h3></thead>
+                    <tr>
+                        <th class = "text-center col-sm-3">会社名</th>
+                        <td class = "col-sm-9"><%=company%></td>
+                    </tr>
+                    <tr>
+                        <th class = "text-center col-sm-3">氏名</th>
+                        <td class = "col-sm-9"><%= name%></td>
+                    </tr>
+                    <tr>
+                        <th class = "text-center col-sm-3">メール</th>
+                        <td class = "col-sm-9"><%= mail%></td>
+                    </tr>
+                    <tr>
+                        <th class = "text-center col-sm-3">電話番号</th>
+                        <td class = "col-sm-9"><%= tel%></td>
+                    </tr>
+                    <tr>
+                        <th class = "text-center col-sm-3">内容</th>
+                        <td class = "col-sm-9"><%= content.gsub(/\r\n|\r|\n/, "<br>")%></td>
+                    </tr>
+                </table>
+            </div>
         <div class="text-center mb-4">
             <!-- 「戻る」ボタンを緑色にする設定を追加 -->
-            <a action = "/" method="GET" href="contact.html" class="btn btn-success">戻る</a>
+            <a href="/" class="btn btn-success">戻る</a>
         </div>
     </div>
     <footer class="text-center pt-3 border-top">
